@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="post-title">
+    <h1 class="text-center pt-3" style="color:white">{{ detail.title }}</h1>
+  </div>
+  <div class="post-body text-center">
+    <p class="text-center">{{ detail.pub_date_preety }}</p>
+    <img
+      class="img-fluid"
+      src="{{ detail.image.url }}"
+      width="600"
+      height="600"
+      \
+    />
+    <br />
+    <p style="color: rgba(255, 255, 255, 0.68);font-weight:900;">
+      {{ detail.body }}
+    </p>
+    <br />
+  </div>
+</div>
+{% endblock %}

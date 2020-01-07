@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %} {% load staticfiles %} {% block title %}
+TPOWSMVDU | {{ site_title }}{% endblock %} {% block branding %}
+<h1 id="site-name">
+  <a href="{% url 'admin:index' %}">
+    <img src="{% static 'logo.JPG' %}" height="40px" />
+  </a>
+  {{ site_title }}
+</h1>
+{% endblock %} {% block nav-global %}{% endblock %}

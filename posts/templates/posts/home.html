@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+{% endblock %}{% block content %}
+<h1 class="text-center pt-3 font-weight-normal">
+  <strong>Welcome to TPOSMVDU Official Website!</strong>
+</h1>
+<br />
+<br />
+<h2>Latest Posts</h2>
+<hr />
+<div class="container">
+  <div class="row">
+    {% for post in posts.all reversed %}
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="{{ post.image.url }}"
+        width="200"
+        height="400"
+        \
+      />
+      <div class="card-body">
+        <div class="card-title">
+          <a href="{% url 'detail' post.id %}">
+            <h3>{{ post.title }}</h3>
+          </a>
+
+          {{ post.pub_date_preety }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<br />
+<br />
+{% endblock %}

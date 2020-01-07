@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %} {% block content %} {% for message in messages %}
+
+<div class="alert alert-danger">
+  <a class="close" href="#" data-dismiss="alert">×</a>
+  {{ message }}
+</div>
+{% endfor %}
+<div class="card edit">
+  <form class="form-edit" method="POST" action="{% url 'login' %}">
+    {% csrf_token %} Username:
+    <br />
+    <input type="text" name="username" />
+    <br />
+    Password:
+    <br />
+    <input type="password" name="password" />
+    <br />
+    <br />
+    <input class="btn btn-primary k" type="submit" value="Login" />
+  </form>
+</div>
+
+{% endblock %}
